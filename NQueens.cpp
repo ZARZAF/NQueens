@@ -59,7 +59,7 @@ bool Queens::has_conflicts() const
     return false;
 }
 
-//reinit get true random helper - used: ChatGPT
+// reinit get true random helper - used: ChatGPT
 
 std::vector<int> generateRandomPermutation(int n) {
     // Create a vector to store the permutation
@@ -90,11 +90,11 @@ std::vector<int> generateRandomPermutation(int n) {
 void Queens::reinit()
 {
     vector<int> half = generateRandomPermutation(size/2); // size == 9
-    for (int i = 0; i < size/2; i++)                         // size / 2 = 4
-        queens[i] = half[i]*2+1;                             // size + 1 / 2 = 5
-                                                             // 
+    for (int i = 0; i < size/2; i++)                      // size / 2 = 4
+        queens[i] = half[i]*2+1;                          // size + 1 / 2 = 5
+                                                          // 
     half = generateRandomPermutation((size+1)/2);         // i - size + 1 / 2 = -1
-    for (int i = size/2; i < size; i++)                      //
+    for (int i = size/2; i < size; i++)                      
         queens[i] = half[i-(size+1)/2 + (size % 2)]*2;
 
     //diag init
